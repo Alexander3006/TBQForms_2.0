@@ -1,0 +1,22 @@
+body {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: gray;
+}
+
+main {
+    flex: 1 1 auto;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    max-width: 100%;
+    padding: 20px;
+    max-height: 47rem;
+    min-height: 47rem;
+}
+
+p {
+    cursor: default;
+}

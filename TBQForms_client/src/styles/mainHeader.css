@@ -1,0 +1,55 @@
+header {
+    min-width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:  space-between;
+    flex-wrap: wrap;
+    padding: 10px;
+
+    background-color: rgb(41, 41, 41);
+}
+
+.header_section {
+    display: flex;
+    flex-direction: row;
+}
+
+.header_logo_text{
+    margin: 0.5rem 2rem;
+    font-size: 2.3rem;
+    font-weight: 600;
+    color: white;
+}
+
+.headerLink {
+    background-color: rgb(39, 38, 39);
+    padding: 10px 15px;
+    margin-left: 3px;
+    margin-right: 1rem;
+    border-radius: 10%;
+    border: 1px solid rgb(255, 255, 255);
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+
+a {
+    display: block;
+    text-decoration: none;
+    color: white;
+}
+a:hover{
+    text-decoration: none;
+    color: black;
+}
+
+.hover:hover{
+    background-color: grey;
+}
+
+@media screen and (max-width: 576px){ 
+  header {
+      justify-content: center;
+  }
+}

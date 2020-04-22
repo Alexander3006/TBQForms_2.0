@@ -1,0 +1,68 @@
+.form_link {
+    width: 15rem;
+    height: 15rem;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+
+    border: 1px solid white;
+    border-radius: 5%;
+    margin: 1.5rem;
+
+    overflow: hidden;
+}
+
+.form_link_name {
+    flex: 3 0 auto;
+    text-align: center;
+    border-radius: 5% 5% 0 0;
+    background-color: rgb(161, 161, 161);
+    height:50%;
+    overflow: auto;
+}
+
+.form_link_name p {
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    font-size: 2rem;
+    margin-top: 10%;
+    word-wrap: break-word;
+    overflow: auto;
+}
+
+.form_link_about {
+    max-height: 40%;
+    height: 30%;
+    flex: 0 0 auto;
+    color: rgb(197, 197, 197);
+    padding: 5px 1rem;
+
+    border-top: 1px solid white;
+    background-color: rgb(63, 63, 63);
+
+    overflow-x: hidden; 
+    overflow-x: auto;   
+    -ms-overflow-style: none;  /* IE 10+ */
+    scrollbar-width: none; /* Firefox */ 
+}
+
+.form_link_name:hover {
+    background-color: grey;
+}
+
+.form_link_about:hover {
+    min-height: 40%;
+}
+
+.deleteForm {
+    text-align: center;
+    color: grey;
+    cursor: default;
+    border-radius: 0 0 0.9rem 0.9rem;
+}
+
+.deleteForm:hover{
+    color: white;
+    background-color: black;
+}

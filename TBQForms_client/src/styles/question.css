@@ -1,0 +1,82 @@
+.question {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    min-width: 50%;
+    padding: 1%;
+    max-width: 50%;
+    background-color: rgb(189, 189, 189);
+    border-radius: 1rem;
+    border-top: 1rem solid rgb(41, 41, 41);
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.question p {
+    display: block;
+    text-align: center;
+    font-size: 2rem;
+    margin: 0;
+    word-break: break-all
+}
+
+.question hr {
+    display: block;
+    color: rgb(41, 41, 41);
+    width: 90%;
+}
+
+.answers{
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 95%;
+    margin-bottom: 1rem;
+    overflow-x: scroll;
+}
+
+.selectedAnswer {
+    background-color: rgb(41, 41, 41);
+    color: rgb(122, 122, 122);
+}
+
+.notSelectedAnswer {
+    background-color: rgb(122, 122, 122);
+}
+
+.answers p {
+    word-break: break-all;
+    max-width: 98%;
+    min-width: 95%;
+    text-align: left;
+    font-size: 1.4rem;
+    margin: 0.3rem 0;
+    border-radius: 0.3rem;
+    padding: 0.2rem 1%;
+}
+
+.answers p:hover {
+    color: rgb(122, 122, 122);
+    background-color: rgb(41, 41, 41);
+}
+
+.question textarea {
+    min-width: 90%;
+    resize: none;
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+    background-color: rgb(218, 218, 218);
+    margin: 0.5rem 1rem;
+    outline: none;
+}
+
+textarea::-webkit-scrollbar {
+    width: 0;
+}
+
+@media screen and (max-width: 576px){ 
+    .question {
+        min-width: 100%;
+    }
+}

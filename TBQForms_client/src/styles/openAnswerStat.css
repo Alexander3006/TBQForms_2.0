@@ -1,0 +1,50 @@
+.OpenAnswerStat {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    min-width: 50%;
+    padding: 1%;
+    max-width: 50%;
+    background-color: rgb(189, 189, 189);
+    border-radius: 1rem;
+    border-top: 1rem solid rgb(41, 41, 41);
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.questionText {
+    font-size: 1.5rem;
+    font-weight: 600;
+    word-break: break-all
+}
+
+hr {
+    color: rgb(41, 41, 41);
+    width: 90%;
+    margin: 0;
+}
+
+.allAnswers {
+    min-width: 90%;
+    max-height: 20rem;
+    overflow: auto;
+    margin-top: 1rem;
+    padding: 1rem;
+    padding-left: 2rem;
+    border-radius: 1rem;
+    background-color: rgb(173, 173, 173);
+    border-bottom: 2px solid black;
+    border-left: 2px solid black;
+}
+
+.allAnswers p {
+    padding: 5px;
+    border-bottom: 1px solid black;
+    font-weight: 500;
+}
+
+@media screen and (max-width: 576px){ 
+    .OpenAnswerStat {
+        min-width: 100%;
+    }
+}

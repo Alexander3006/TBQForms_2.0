@@ -1,0 +1,54 @@
+CREATE TABLE IF NOT EXISTS "Users"(
+	"userId" SERIAL PRIMARY KEY,
+	"email" CHARACTER(64) UNIQUE NOT NULL,
+	"userName" CHARACTER(32) NOT NULL,
+	"surname" CHARACTER(32) NOT NULL,
+	"age" INT CHECK("age" >= 16 AND "age" < 150) NOT NULL,
+	"phoneNumber" CHARACTER (32) NOT NULL,
+	"status" CHARACTER(8) NOT NULL DEFAULT 'user'
+);
+
+CREATE TABLE IF NOT EXISTS "Authentication"(
+	"authId" SERIAL PRIMARY KEY,
+	"email" CHARACTER(64) REFERENCES "Users" ("email") ON DELETE CASCADE NOT NULL,
+	"password" CHARACTER(64) NOT NULL,
+	"salt" CHARACTER(16) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS "QuestionForms"( 
+	"qFormId" SERIAL PRIMARY KEY,
+	"email" CHARACTER(64) REFERENCES "Users" ("email") ON DELETE CASCADE NOT NULL,
+	"accessType" CHARACTER(16) NOT NULL,
+	"formName" CHARACTER(128),
+	"allowedUsers" TEXT[],
+	"formAbout" TEXT
+);
+
+CREATE TABLE IF NOT EXISTS "Questions"(
+	"questionId" SERIAL PRIMARY KEY,
+	"qFormId" INTEGER REFERENCES "QuestionForms"("qFormId") ON DELETE CASCADE NOT NULL,
+	"questionType" CHARACTER(16) NOT NULL,
+	"allowShowResult" BOOLEAN NOT NULL,
+	"questionText" Text
+);
+
+CREATE TABLE IF NOT EXISTS "PossibleAnswers"(
+	"pAnswerId" SERIAL PRIMARY KEY,
+	"questionId" INTEGER REFERENCES "Questions" ("questionId") ON DELETE CASCADE NOT NULL,
+	"author" CHARACTER(64) REFERENCES "Users" ("email") ON DELETE CASCADE ON UPDATE CASCADE,
+	"pAnswerText" TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS "AnswerForms"(
+	"aFormId" SERIAL PRIMARY KEY,
+	"email" CHARACTER(64) REFERENCES "Users" ("email") ON DELETE CASCADE,
+	"qFormId" INTEGER REFERENCES "QuestionForms" ("qFormId") ON DELETE CASCADE NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS "UserAnswers"(
+	"uAnswerId" SERIAL PRIMARY KEY,
+	"aFormId" INTEGER REFERENCES "AnswerForms" ("aFormId") ON DELETE CASCADE NOT NULL,
+	"questionId" INTEGER REFERENCES "Questions" ("questionId") ON DELETE CASCADE NOT NULL,
+	"pAnswerId" INTEGER REFERENCES "PossibleAnswers" ("pAnswerId") ON DELETE CASCADE,
+	"answerText" Text
+);
