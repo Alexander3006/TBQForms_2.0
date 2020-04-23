@@ -1,15 +1,15 @@
 'use strict';
 
 import {Answer} from './Answer';
-import {AnswerResponce} from './serverResponceInterfaces/AnswerResponce';
+import {AnswerResponse} from './serverResponseInterfaces/AnswerResponse';
 
 export class OneOfManyAnswer extends Answer {
     protected possibleAnswerId: number;
     protected answerText: string;
     protected allowShowResult: boolean;
-    private possibleAnswers: Array<AnswerResponce>;
+    private possibleAnswers: Array<AnswerResponse>;
 
-    constructor(questionId: number, questionText:string, answers:Array<AnswerResponce>, allowShowResult: boolean) {
+    constructor(questionId: number, questionText:string, answers:Array<AnswerResponse>, allowShowResult: boolean) {
       super(questionId, questionText, 'OneOfMany');
       this.possibleAnswerId = -1;
       this.answerText = '';

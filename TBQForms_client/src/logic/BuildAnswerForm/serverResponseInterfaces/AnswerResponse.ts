@@ -1,4 +1,4 @@
-export interface AnswerResponce {
+export interface AnswerResponse {
     author: null | string;
     pAnswerId: number;
     panswerText: string;
